@@ -7,7 +7,7 @@ import authRouter from "./routes/auth.js";
 const app = express();
 const port = Number(process.env.PORT || 4000);
 
-app.use(cors({ origin: "http://localhost:5173" }));
+app.use(cors({ origin: process.env.CLIENT_ORIGIN }));
 app.use(express.json());
 app.use("/api/auth", authRouter);
 app.use("/api/movies", moviesRouter);
